@@ -140,7 +140,7 @@
         focusInput();
         
         // Show welcome message if chat is empty
-        if (chatMessages.children.length === 0) {
+        if (chatMessages.children.length === 1 && chatMessages.querySelector('.text-center')) {
             showWelcomeMessage();
         }
     }
@@ -503,12 +503,13 @@
     function showWelcomeMessage() {
         // Add some sample quick start messages
         setTimeout(() => {
-            // Always show welcome message when this function is called
-            addMessageToUI({
-                type: 'bot',
-                message: 'Hello! I\'m Alex, your friendly AI companion! 😊 I\'m here to chat about anything that interests you - from daily life to big ideas. Just say hi, ask me questions, or tell me what\'s on your mind! 💬',
-                timestamp: getCurrentTime()
-            });
+            if (chatMessages.querySelector('.text-center')) {
+                addMessageToUI({
+                    type: 'bot',
+                    message: 'Hello! I\'m Alex, your friendly AI companion! 😊 I\'m here to chat about anything that interests you - from daily life to big ideas. Just say hi, ask me questions, or tell me what\'s on your mind! 💬',
+                    timestamp: getCurrentTime()
+                });
+            }
         }, 1000);
     }
 

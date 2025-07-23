@@ -30,9 +30,6 @@
     scrollbar-color: #e1e5e9 transparent;
     border-left: none;
     border-right: none;
-    height: 400px;
-    overflow-y: auto;
-    margin-bottom: 1rem;
 }
 
 #chat-messages::-webkit-scrollbar {
@@ -58,25 +55,6 @@
     word-wrap: break-word;
     animation: fadeInUp 0.3s ease-out;
     margin-bottom: 0.5rem;
-}
-
-/* Quick Actions */
-.quick-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
-}
-
-.quick-action {
-    transition: all 0.2s ease;
-    font-size: 0.85rem;
-    white-space: nowrap;
-}
-
-.quick-action:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* User Message Styling */
