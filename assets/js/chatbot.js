@@ -9,7 +9,7 @@
     // DOM Elements
     const chatForm = document.getElementById('chat-form');
     const messageInput = document.getElementById('message-input');
-    const sendBtn = document.getElementById('send-btn');
+    const sendBtn = document.getElementById('send-button');
     const chatMessages = document.getElementById('chat-messages');
     const quickActions = document.querySelectorAll('.quick-action');
 
@@ -140,7 +140,7 @@
         focusInput();
         
         // Show welcome message if chat is empty
-        if (chatMessages.children.length === 1 && chatMessages.querySelector('.text-center')) {
+        if (chatMessages.children.length === 0) {
             showWelcomeMessage();
         }
     }
@@ -503,13 +503,12 @@
     function showWelcomeMessage() {
         // Add some sample quick start messages
         setTimeout(() => {
-            if (chatMessages.querySelector('.text-center')) {
-                addMessageToUI({
-                    type: 'bot',
-                    message: 'Hello! I\'m Alex, your friendly AI companion! 😊 I\'m here to chat about anything that interests you - from daily life to big ideas. Just say hi, ask me questions, or tell me what\'s on your mind! 💬',
-                    timestamp: getCurrentTime()
-                });
-            }
+            // Always show welcome message when this function is called
+            addMessageToUI({
+                type: 'bot',
+                message: 'Hello! I\'m Alex, your friendly AI companion! 😊 I\'m here to chat about anything that interests you - from daily life to big ideas. Just say hi, ask me questions, or tell me what\'s on your mind! 💬',
+                timestamp: getCurrentTime()
+            });
         }, 1000);
     }
 
